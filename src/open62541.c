@@ -38,7 +38,7 @@
 # define _CRT_SECURE_NO_WARNINGS
 #endif
 
-#include "open62541.h"
+#include "include/open62541.h"
 
 /*********************************** amalgamated original file "/home/alberto/projects/open62541/deps/queue.h" ***********************************/
 

@@ -7,16 +7,16 @@
  *
  * This tutorial shows how to work with data types and how to add variable nodes
  * to a server. First, we add a new variable to the server. Take a look at the
- * definition of the ``UA_VariableAttrbitues`` structure to see the list of all
+ * definition of the ``UA_VariableAttributes`` structure to see the list of all
  * attributes defined for VariableNodes.
  *
  * Note that the default settings have the AccessLevel of the variable value as
  * read only. See below for making the variable writable.
  */
 
+#include "include/open62541_v0_4.h"
 #include <signal.h>
-#include <stdio.h>
-#include "open62541.h"
+#include <stdlib.h>
 
 static void
 addVariable(UA_Server *server) {
@@ -96,7 +96,7 @@ writeWrongVariable(UA_Server *server) {
 
 /** It follows the main server code, making use of the above definitions. */
 
-UA_Boolean running = true;
+static volatile UA_Boolean running = true;
 static void stopHandler(int sign) {
     UA_LOG_INFO(UA_Log_Stdout, UA_LOGCATEGORY_SERVER, "received ctrl-c");
     running = false;
@@ -106,15 +106,15 @@ int main(void) {
     signal(SIGINT, stopHandler);
     signal(SIGTERM, stopHandler);
 
-    UA_ServerConfig *config = UA_ServerConfig_new_default();
-    UA_Server *server = UA_Server_new(config);
+    UA_Server *server = UA_Server_new();
+    UA_ServerConfig_setDefault(UA_Server_getConfig(server));
 
     addVariable(server);
     writeVariable(server);
     writeWrongVariable(server);
 
     UA_StatusCode retval = UA_Server_run(server, &running);
+
     UA_Server_delete(server);
-    UA_ServerConfig_delete(config);
-    return (int)retval;
+    return retval == UA_STATUSCODE_GOOD ? EXIT_SUCCESS : EXIT_FAILURE;
 }

@@ -1,5 +1,5 @@
 #include <signal.h>
-#include "open62541.h"
+#include "include/open62541.h"
 
 static volatile UA_Boolean running = true;
 
