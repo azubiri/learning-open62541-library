@@ -25,7 +25,7 @@
 # define _CRT_SECURE_NO_WARNINGS
 #endif
 
-#include "include/open62541_v0_4.h"
+#include "include/v0_4/open62541_v0_4.h"
 
 /*********************************** amalgamated original file "/home/alberto/projects/open62541/deps/open62541_queue.h" ***********************************/
 

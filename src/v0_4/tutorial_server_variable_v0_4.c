@@ -14,7 +14,7 @@
  * read only. See below for making the variable writable.
  */
 
-#include "include/open62541_v0_4.h"
+#include "include/v0_4/open62541_v0_4.h"
 #include <signal.h>
 #include <stdlib.h>
 

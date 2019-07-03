@@ -16,7 +16,7 @@
 
 #include <signal.h>
 #include <stdio.h>
-#include "include/open62541.h"
+#include "include/v0_3/open62541.h"
 
 static void
 addVariable(UA_Server *server) {
