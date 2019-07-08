@@ -19,10 +19,10 @@ OS version: Ubuntu 18.04.2 LTS
 
 ### Raspberry Pi
 
-	- Raspberry Pi Model: Model 3b+
-	- SD card: microSD 32GB
-	- OS version: Raspbian GNU/Linux 10 (buster)
-	- Kernel Linux version: 4.19.50-v7+
+	* Raspberry Pi Model: Model 3b+
+	* SD card: microSD 32GB
+	* OS version: Raspbian GNU/Linux 10 (buster)
+	* Kernel Linux version: 4.19.50-v7+
 
 <a name="build"></a>
 ## Building
