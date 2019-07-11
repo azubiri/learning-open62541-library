@@ -1,4 +1,4 @@
-# Beginner Tutorials of ROS
+# Learning open62541 library
 
 ## Table of Contents
 1. [Introduction](#intro)
